@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+body{
+    background: linear-gradient(to bottom right, #33ccff 0%, #ff99cc 100%);
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    font-size: 50px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.container{
+    width: 100%;
+    max-width: 700px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    position: relative;
+}
+
+.container input{
+    z-index: -10;
+    position: absolute;
+    opacity: 0;
+}
+
+#pg{
+    background-color: #fff;   
+    color: rgb(148,148,148);
+    word-break: break-all;
+    letter-spacing: 1px;
+    text-align: justify;
+}
+
+/* #pg::selection{
+    background-color: #ff99cc;
+    color: black;
+} */
+
+.containerin{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    background-color: #242424;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.result{
+    display: flex;
+    color: white;
+    width: 90%;
+}
+
+.result .txt1{
+    font-size: 14px;
+}
+
+.result .txt2{
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #33ccff;
+    /* min-width: 150px; */
+    border-radius: 15px;
+    padding: 5px;
+    text-align: center;
+    min-width: 50px;
+    /* margin-left: 5px; */
+}
+
+.result div{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 20px;
+}
+
+.containerin button{
+    background-color: #ff99cc;
+    color: white;
+    border: none;
+    padding: 5px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#pg span{
+    position: relative;
+}
+
+#pg span.active::before{
+    position: absolute;
+    content: "";
+    height: 2px;
+    background-color: #ff1389;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    animation: blink 1s ease-in-out infinite;
+}
+
+@keyframes blink {
+    50%{
+        opacity: 1;
+    }
+}
+
+#pg span.correct{
+    color: green;
+}
+
+#pg span.incorrect{
+    color: red;
+}
